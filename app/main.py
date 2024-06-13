@@ -1,5 +1,5 @@
 import streamlit as st
-from constants.general import BACKGROUND_COLOR, CARD_CSS,CARD_CSS_V2, container_css,PRIMARY_COLOR,PRIMARY_COLOR_BACKGROUND,DIAS_PROYECTO_DEFECTO,SOB_PROYECTO_DEFECTO
+from constants.general import BACKGROUND_COLOR, CARD_CSS,CARD_CSS_V2, container_css,PRIMARY_COLOR,PRIMARY_COLOR_BACKGROUND,DIAS_PROYECTO_DEFECTO,SOB_PROYECTO_DEFECTO,FARMS
 from utils.proyection_helpers import get_projections
 from utils.data_integration_helper import get_last
 from utils.data_generation_helper import export_df_to_pdf, export_df_to_pdfv2
@@ -156,7 +156,7 @@ with stylable_container(
         with col1:
             farm_selection = st.selectbox(
              "Seleccione el campo",
-             ("CAMARONES NATURISA", "CAMINO REAL", "MARCHENA"))
+             FARMS)
             range_days = st.number_input("Seleccione Rango Proyecto", min_value=0, max_value=90, value=21, step=1)
         with col2:
             sob = st.number_input("Seleccione Sobrevivencia Proyecto", min_value=0.0, max_value=1.0, value=SOB_PROYECTO_DEFECTO, step=0.05)

@@ -133,3 +133,15 @@ TABLE_STYLE = {
 
 DIAS_PROYECTO_DEFECTO =  83
 SOB_PROYECTO_DEFECTO = 0.48
+
+
+## para definir al cliente los campos
+import os
+
+# Obtener el valor de la variable de entorno 'APP_ENV', y usar 'development' como valor por defecto
+app_env = os.getenv('CLIENTE', 'NATURISA')
+FARMS = None
+if app_env == "NATURISA":
+    FARMS = ("CAMARONES NATURISA", "CAMINO REAL", "MARCHENA")
+elif app_env == "PESFALAN":
+    FARMS = ("AGLIPESCA", "AGLIPESCA SUR", "MATORRILLOS", "PESFABU", "PESFABUELE", "PROCAM")
